@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Personal academic homepage">
+  <title>Your Name | Academic Homepage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Chise Ishii</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <!--<a href="#news">News</a>-->
+        <!--<a href="#research">Research</a>-->
+        <a href="#publications">Publications</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#beyond">Beyond Research</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="page" id="home">
+    <header class="hero" id="about">
+      <div class="hero-copy">
+        <p class="eyebrow"></p>
+        <h1>Chise Ishii</h1>
+        <p class="position">Ph.D. Student · Graduate School of Science and Technology</p>
+        <p class="affiliation">Keio University, 3-14-1 Hiyoshi, Kohoku-ku, Yokohama, 223-8522, Kanagawa, Japan</p>
+        <p class="intro">
+          I am a 2nd year Ph.D. student in Computer Science at Keio University, advised by Prof. Yasushi Narushima. 
+          My research focuses on establishing theoretical guarantees for AI using techniques from <span class="highlight">optimization</span> and <span class="highlight">dynamical systems</span>. 
+          I am particularly interested in developing methods to enhance the safety and reliability of neural networks.
+        </p>
+        <div class="social-links" aria-label="Academic and contact links">
+          <a href="mailto:chiseblanton125@keio.jp"><i class="fa-regular fa-envelope"></i> Email</a>
+          <a href="https://scholar.google.com/citations?user=xlU7yAkAAAAJ&hl=ja" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-graduation-cap"></i> Scholar</a>
+          <a href="https://www.linkedin.com/in/chise-ishii" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a href="#" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a href="https://researchmap.jp/chise_ishii" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-link"></i> Researchmap</a>
+          <a href="cv.pdf" target="_blank" rel="noopener noreferrer"><i class="fa-regular fa-file-pdf"></i> CV</a>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="profile.jpg" alt="Profile photo"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portrait-placeholder"><i class="fa-regular fa-image"></i><span>Photo</span></div>
+      </div>
+    </header>
+
+    <!--
+    <section class="section" id="news">
+      <h2>News</h2>
+      <ul class="news-list">
+        <li><time>YYYY.MM</time><span>[Add a recent update, award, talk, or announcement.]</span></li>
+        <li><time>YYYY.MM</time><span>[Add another update; remove this line if not needed.]</span></li>
+        <li><time>YYYY.MM</time><span>[A few concise items are enough.]</span></li>
+      </ul>
+    </section>
+  -->
+
+    <!--
+    <section class="section" id="research">
+      <h2>Research Interests</h2>
+      <p>[Write 2–4 sentences about your research interests, methods, and the questions you want to answer.]</p>
+      <div class="tags">
+        <span>[Research topic 1]</span><span>[Research topic 2]</span><span>[Research topic 3]</span>
+      </div>
+    </section>
+  -->
+
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <!--
+      <p class="section-note">Selected publications and preprints. See <a href="#">[Google Scholar / full publication list]</a>.</p>
+      -->
+      <article class="publication">
+        <div class="pub-year">2026</div>
+        <div>
+          <h3>Convergence Analysis via ODE Approach for Convex Optimization with Linear Equality Constraints</h3>
+          <p class="authors">Chise Ishii, Yasushi Narushima</p>
+          <p class="venue">Preprint</p>
+          <!-- <p class="pub-summary">[Optional: one sentence describing the main contribution.]</p> -->
+          <div class="paper-links">
+            <!--<a href="#"><i class="fa-regular fa-file-pdf"></i> Paper</a>-->
+            <a href="https://arxiv.org/abs/2605.17819"><i class="fa-solid fa-arrow-up-right-from-square"></i> arXiv</a>
+            <!--<a href="#"><i class="fa-brands fa-github"></i> Code</a>-->
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <section class="section" id="experience">
+      <h2>Research Experience</h2>
+      <article class="timeline-item">
+        <time>2025-Present</time>
+        <div><h3>Collaborative Researcher</h3><p>Keio AI Research Center</p><p class="muted">led by Prof. Komei Sugiura, advancing interdisciplinary AI research in collaboration with CMU and partner institutions.</p></div>
+      </article>
+    </section>
+
+    <section class="section" id="education">
+      <h2>Education</h2>
+      <article class="timeline-item">
+        <time>2025-Present</time>
+        <div><h3>Ph.D., Engineering</h3><p>Keio University · Graduate School of Science and Technology</p></div>
+      </article>
+      <article class="timeline-item">
+        <time>2020-2022</time>
+        <div><h3>M.S., Science</h3><p>Waseda University · Department of Mathematics and Applied Mathematics, Graduate School of Fundamental Science and Engineering</p></div>
+      </article>
+      <article class="timeline-item">
+        <time>2016-2020</time>
+        <div><h3>B.S., Science</h3><p>Waseda University · Department of Mathematics, School of Fundamental Science and Engineering (Minor in Applied Mechanics and Aerospace Engineering)</p></div>
+      </article>
+    </section>
+
+    <section class="section" id="beyond">
+      <h2>Beyond Research - Violin</h2>
+      <div class="beyond-content">
+        <div class="beyond-text">
+          <p>
+            In my spare time, I enjoy playing the violin. I began studying the violin at the age of five, and classical music has been an important part of my life ever since.
+            In 2013, I appeared as a soloist at the Altenburger Musikfestival. As an undergraduate, I served as concertmaster for the Waseda Symphony Orchestra's 2018 European tour, performing in 12 cities, including the Berlin Philharmonie and the Musikverein in Vienna. In 2019, I performed Tchaikovsky's Violin Concerto with the orchestra, conducted by Daisuke Soga. 
+            In 2023, I was selected for the Be Phil Orchestra 2023 Japan, organized by the Berliner Philharmoniker, and performed at Suntory Hall under the baton of Kirill Petrenko, alongside Daishin Kashimoto, Ludwig Quandt, and other distinguished musicians. 
+            In 2026, I joined the Festival Orchestra of the Chofu International Music Festival, performing under the baton of Masaaki Suzuki.
+            I have studied with Fumi Koseki and Yasuko Ohtani and I have also attended masterclasses with members of the Bayreuth Festival Quartet, as well as Mayumi Kanagawa, Reiko Watanabe, Simon James, and Sulki Yu.
+            I have also attended music festivals and training programs in Japan and abroad, including in the United States and Italy.  
+          </p>
+        </div>
+        
+        <div class="portrait music-photo">
+          <img src="profile2.jpg" alt="Playing the violin"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+          <div class="portrait-placeholder">
+            <i class="fa-regular fa-image"></i>
+            <span>Photo</span>
+          </div>
+        </div> <!-- .portrait --> 
+      </div> <!-- .beyond-content -->
+    </section>
+
+    <section class="section contact" id="contact">
+      <h2>Contact</h2>
+      <!--<p>Feel free to get in touch about research or potential collaborations.</p>-->
+      <a href="mailto:chiseblanton125@keio.jp"><i class="fa-regular fa-envelope"></i> chiseblanton125 [at] keio [dot] jp</a>
+    </section>
+
+    <footer><span>© <span id="year"></span> Chise Ishii</span><span>Last updated: Oct. 17 2026</span></footer>
+  </main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const toggle = document.querySelector(".menu-toggle");
+    const links = document.querySelector(".nav-links");
+    toggle.addEventListener("click", () => {
+      const open = links.classList.toggle("open");
+      toggle.setAttribute("aria-expanded", String(open));
+    });
+    links.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      links.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }));
+  </script>
+</body>
+</html>

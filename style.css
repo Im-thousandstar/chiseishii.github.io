@@ -1,0 +1,164 @@
+/* Clean, understated academic style. Adjust colors in :root. */
+:root {
+  --ink: #2b3036;
+  --muted: #747c85;
+  --accent: #597b96;
+  --accent-pale: #eef3f6;
+  --line: #e8ebee;
+  --paper: #fff;
+  --width: 920px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font: 15px/1.75 "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: #304f68; text-decoration: underline; text-underline-offset: 3px; }
+.navbar {
+  position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
+  border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
+}
+.nav-inner {
+  max-width: var(--width); width: calc(100% - 44px); min-height: 62px;
+  margin: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.brand { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
+.nav-links a { color: #555e67; font-size: .84rem; }
+.nav-links a:hover { color: var(--accent); text-decoration: none; }
+.menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 1.15rem; padding: 8px; }
+.page { width: min(var(--width), calc(100% - 44px)); margin: 0 auto; }
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1fr) 158px; gap: 42px;
+  align-items: start; padding: 62px 0 38px; border-bottom: 1px solid var(--line);
+}
+.eyebrow { margin: 0 0 5px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; }
+h1 { margin: 0; font-size: clamp(2.1rem, 5vw, 2.75rem); line-height: 1.2; font-weight: 600; letter-spacing: -.05em; }
+.position { margin: 12px 0 0; font-weight: 500; }
+.affiliation { margin: 0; color: var(--muted); }
+.intro { margin: 20px 0 18px; max-width: 650px; }
+.portrait {
+  width: 200px;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #f4f6f8;
+  margin-left: 0;
+}
+.portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+.portrait-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  place-content: center;
+  justify-items: center;
+  gap: 7px;
+  color: #9aa3ad;
+  border-radius: 50%;
+}
+.portrait-placeholder i {
+  font-size: 1.8rem;
+}
+.social-links { display: flex; flex-wrap: wrap; gap: 10px 18px; margin-top: 20px; }
+.social-links a, .paper-links a, .contact > a { display: inline-flex; align-items: center; gap: 7px; font-size: .88rem; font-weight: 500; }
+.social-links i { font-size: .98rem; }
+.section { padding: 30px 0; border-bottom: 1px solid var(--line); }
+.section h2 { margin: 0 0 15px; font-size: 1.25rem; line-height: 1.4; font-weight: 600; letter-spacing: -.025em; }
+.section p { margin-top: 0; }
+.news-list { list-style: none; display: grid; gap: 8px; padding: 0; margin: 0; }
+.news-list li { display: grid; grid-template-columns: 82px minmax(0, 1fr); gap: 12px; }
+time, .pub-year { color: var(--muted); font-size: .88rem; font-variant-numeric: tabular-nums; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 15px; }
+.tags span { padding: 3px 10px; border-radius: 4px; background: var(--accent-pale); color: #4f6a80; font-size: .81rem; }
+.section-note, .muted { color: var(--muted); font-size: .9rem; }
+.publication { display: grid; grid-template-columns: 58px minmax(0, 1fr); gap: 15px; padding: 17px 0; }
+.publication + .publication { border-top: 1px solid #f0f1f3; }
+.pub-year { padding-top: 2px; }
+.publication h3, .timeline-item h3 { margin: 0 0 4px; font-size: .98rem; font-weight: 600; line-height: 1.55; }
+.authors, .venue, .pub-summary, .timeline-item p { margin: 3px 0 !important; font-size: .9rem; }
+.venue { color: var(--muted); }
+.pub-summary { margin-top: 8px !important; }
+.paper-links { display: flex; flex-wrap: wrap; gap: 8px 16px; margin-top: 8px; }
+.paper-links a { font-size: .83rem; }
+.timeline-item { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 18px; padding: 10px 0; }
+.contact { border-bottom: 0; }
+footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px 0 28px; color: var(--muted); font-size: .8rem; }
+@media (max-width: 760px) {
+  .nav-inner { position: relative; min-height: 58px; }
+  .menu-toggle { display: block; margin-left: auto; }
+  .nav-links { display: none; position: absolute; top: 58px; left: -22px; right: -22px; padding: 14px 22px 18px; background: white; border-bottom: 1px solid var(--line); align-items: flex-start; gap: 10px 18px; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 4px 0; }
+  .hero { grid-template-columns: minmax(0, 1fr) 112px; gap: 20px; padding-top: 42px; }
+  .portrait { width: 112px; }
+}
+@media (max-width: 500px) {
+  .page, .nav-inner { width: calc(100% - 34px); }
+  .hero { grid-template-columns: 1fr; gap: 18px; }
+  .portrait { grid-row: 1; width: 105px; }
+  .intro { margin-top: 15px; }
+  .news-list li { grid-template-columns: 70px minmax(0, 1fr); gap: 8px; }
+  .publication { grid-template-columns: 44px minmax(0, 1fr); gap: 10px; }
+  .timeline-item { grid-template-columns: 1fr; gap: 1px; }
+  footer { flex-direction: column; gap: 3px; }
+}
+/* Highlighted keywords */
+.highlight {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.beyond-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 32px;
+  align-items: start;
+}
+.beyond-text {
+  width: 100%;
+  min-width: 0;
+}
+
+.beyond-text p {
+  max-width: none;
+}
+
+.music-photo {
+  width: 160px;
+  height: auto;
+  aspect-ratio: auto;
+  border-radius: 12px;
+  overflow: hidden;
+  justify-self: end;
+}
+
+.music-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.music-photo .portrait-placeholder {
+  border-radius: 12px;
+}
+
+@media (max-width: 700px) {
+  .beyond-content {
+    grid-template-columns: 1fr;
+  }
+
+  .music-photo {
+    max-width: 100%;
+  }
+}
