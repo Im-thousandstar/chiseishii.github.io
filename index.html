@@ -139,9 +139,12 @@
         </div>
         
         <div class="portrait music-photo">
-          <img src="profile2.jpg" alt="Playing the violin"
-            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
-          <div class="portrait-placeholder">
+          <img src="profile2.jpg"
+                alt="Playing the violin"
+                loading="lazy"
+                decoding="async"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+     <div class="portrait-placeholder">
             <i class="fa-regular fa-image"></i>
             <span>Photo</span>
           </div>
