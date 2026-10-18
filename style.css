@@ -97,6 +97,17 @@ time, .pub-year { color: var(--muted); font-size: .88rem; font-variant-numeric: 
 .timeline-item { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 18px; padding: 10px 0; }
 .contact { border-bottom: 0; }
 footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px 0 28px; color: var(--muted); font-size: .8rem; }
+@media (max-width: 900px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr) 120px;
+    gap: 16px;
+  }
+
+  .portrait,
+  .music-photo {
+    width: 120px;
+  }
+}
 @media (max-width: 760px) {
   .nav-inner { position: relative; min-height: 58px; }
   .menu-toggle { display: block; margin-left: auto; }
@@ -105,7 +116,7 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px
   .nav-links a { padding: 4px 0; }
   .hero { grid-template-columns: minmax(0, 1fr) 120px; gap: 12px; padding-top: 42px; }
   .portrait,
-   .music-photo { width: 120px; justify-self: start; margin-left: -8px;}
+   .music-photo { width: 120px; justify-self: start; }
 }
 @media (max-width: 500px) {
   .page, .nav-inner { width: calc(100% - 34px); }
