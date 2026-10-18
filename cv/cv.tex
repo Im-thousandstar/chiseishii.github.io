@@ -1,0 +1,187 @@
+\documentclass[11pt,a4paper]{article}
+
+% =========================================================
+% Academic CV template
+% Compile with: pdflatex cv.tex
+% Replace blank fields and comments with your information.
+% =========================================================
+
+\usepackage[margin=23mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{linkblue}{RGB}{40, 85, 145}
+\hypersetup{
+    colorlinks=true,
+    urlcolor=linkblue,
+    linkcolor=linkblue
+}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+
+\titleformat{\section}
+  {\large\bfseries}
+  {}
+  {0pt}
+  {}
+  [\titlerule]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titlespacing*{\section}{0pt}{14pt}{6pt}
+\titlespacing*{\subsection}{0pt}{8pt}{3pt}
+
+\setlist[itemize]{leftmargin=1.5em, itemsep=2pt, topsep=2pt}
+\setlist[enumerate]{leftmargin=2em, itemsep=5pt, topsep=3pt}
+
+% ---------- Reusable entry commands ----------
+\newcommand{\educationentry}[4]{%
+  \textbf{#1}\hfill #2\\
+  #3\\
+  #4\par\vspace{4pt}
+}
+
+\newcommand{\experienceentry}[3]{%
+  \textbf{#1}\hfill #2\\
+  #3\par\vspace{4pt}
+}
+
+\begin{document}
+
+% =========================================================
+% Contact Information
+% =========================================================
+\begin{center}
+    {\LARGE\textbf{Chise Ishii}}\\[5pt]
+    {\small Ph.D. Student, Graduate School of Science and Technology, Keio University\\[3pt]
+    Email: \underline{chiseblanton125@keio.jp} \quad \underline{https://im-thousandstar.github.io/chiseishii.github.io/} \quad
+    }
+  \end{center}
+
+% =========================================================
+\section{Research Interests}
+
+\begin{itemize}
+    \item Optimization, Convergence Analysis
+    \item Dynamical Systems, ODEs / SDEs, Lyapunov Analysis
+    \item Machine Learning, Deep Learning, Artificial Intelligence
+\end{itemize}
+
+% =========================================================
+\section{Education}
+
+\educationentry
+  {Ph.D., Engineering, Keio University, Japan}
+  {April 2025 -- Present}
+  {Graduate School of Science and Technology}
+  {Department of Open System Management}
+
+\educationentry
+  {M.S., Science, Waseda University, Japan}
+  {April 2020 -- March 2022}
+  {Graduate School of Fundamental Science and Engineering}
+  {Department of Mathematics and Applied Mathematics}
+
+\educationentry
+  {B.S., Science, Waseda University, Japan}
+  {April 2016 -- March 2020}
+  {School of Fundamental Science and Engineering}
+  {Department of Mathematics, School of Fundamental Science and Engineering (Minor in Applied Mechanics and Aerospace Engineering)}
+
+% =========================================================
+\section{Research Experience}
+ \experienceentry
+   {Collaborative Researcher, Keio AI Research Center}
+   {April 2025 -- Present}
+%   {Brief description of research responsibilities or topic.}
+
+% =========================================================
+\section{Work Experience}
+ \experienceentry
+   {Mitsubishi UFJ Financial Group, Inc. and MUFG Bank, Ltd.}
+   {April 2022 -- Present}
+%   {Worked in the financial sector, focusing on banking operations and financial analysis.}
+
+% =========================================================
+\section{Publications and Preprints}
+
+\begin{enumerate}
+    \item Chise Ishii and Yasushi Narushima,
+    ``Convergence Analysis via ODE Approach for Convex Optimization
+    with Linear Equality Constraints,''
+    \textit{arXiv preprint}, May 2026.
+    \textit{arXiv: 2605.17819}
+\end{enumerate}
+
+% =========================================================
+\section{Presentations}
+
+% Presentation type was not specified in the provided information.
+% Fill in the type (e.g., oral presentation or poster presentation)
+% for each entry, then group entries into the appropriate subsections
+% if you would like to distinguish oral and poster presentations.
+
+\begin{enumerate}
+    \item Chise Ishii and Yasushi Narushima,
+    ``Convergence Analysis via ODE Approach for Convex Optimization
+    with Linear Constraints,''
+    The 24th Conference of the International Federation of Operational
+    Research Societies (IFORS 2026), 2026.
+    \textit{Presentation type: Oral presentation} 
+
+    \item Chise Ishii and Yasushi Narushima,
+    ``Convergence Analysis and Discretization Methods via an ODE Approach
+    for Convex Optimization Problems with Linear Constraints,''
+    The 22nd Annual Meeting of the Japan Society for Industrial and
+    Applied Mathematics, March 11, 2026.
+    \textit{Presentation type: Oral presentation} 
+
+    \item Chise Ishii and Yasushi Narushima,
+    ``Convergence Analysis via an ODE Approach for Convex Optimization
+    Problems with Equality Constraints,''
+    The 28th Information-Based Induction Sciences Workshop (IBIS 2025),
+    November 13, 2025.
+    \textit{Presentation type: Poster presentation} 
+
+    \item Chise Ishii and Yasushi Narushima,
+    ``Analysis of the Convergence Behavior of ADMM-Type Algorithms
+    via an ODE Approach,''
+    RIMS Joint Research Workshop, ``Mathematical Optimization:
+    Frontiers of Mathematical Optimization,'' Kyoto University,
+    September 1, 2025.
+    \textit{Presentation type: Oral presentation} 
+\end{enumerate}
+
+% =========================================================
+\section{Teaching Experience}
+
+\experienceentry
+  {Applied Practical Data Science and Artificial Intelligence 2B}
+  {June 2026}
+  {Tokyo University of Science}
+
+% =========================================================
+\section{Fellowships}
+
+\begin{itemize}
+    \item ``Establishing Fundamental Theory for Robust and High-Performance
+    Deep Learning and Machine Learning Methods and Their Applications,''
+    Doctoral Student Research Support Program, Ushioda Memorial Foundation,
+    April 2026 -- March 2027.
+\end{itemize}
+
+% =========================================================
+%\section{Awards and Honors}
+
+% Add awards and honors here, if applicable.
+
+\end{document}
