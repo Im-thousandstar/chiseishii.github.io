@@ -37,7 +37,9 @@ a:hover { color: #304f68; text-decoration: underline; text-underline-offset: 3px
 }
 .eyebrow { margin: 0 0 5px; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; font-size: .75rem; }
 h1 { margin: 0; font-size: clamp(2.1rem, 5vw, 2.75rem); line-height: 1.2; font-weight: 600; letter-spacing: -.05em; }
-.position { margin: 12px 0 0; font-weight: 500; }
+.position { margin: 12px 0 0; font-weight: 400;
+  font-size: 0.95em;
+  color: var(--muted); }
 .affiliation { margin: 0; color: var(--muted); font-size: 0.80rem;}
 .intro { margin: 20px 0 18px; max-width: 650px; }
 
