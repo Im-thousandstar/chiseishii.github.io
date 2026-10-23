@@ -197,12 +197,12 @@
     <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
       <i class="fa-brands fa-x-twitter"></i>
     </a>
-    <a href="https://www.instagram.com/chise.gallery/"
-       target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-      <i class="fa-brands fa-instagram"></i>
+    <a href="/subpage/gallery.html"
+      aria-label="Art Gallery"
+      title="Art Gallery">
+      <i class="fa-solid fa-palette"></i>
     </a>
   </div>
-
   <span class="footer-note">Some links are still under construction :)</span>
 </div>
 </footer>
@@ -211,27 +211,55 @@
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
-    const toggle = document.querySelector(".menu-toggle");
-    const links = document.querySelector(".nav-links");
-    toggle.addEventListener("click", () => {
-      const open = links.classList.toggle("open");
-      toggle.setAttribute("aria-expanded", String(open));
-    });
-    links.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
-      links.classList.remove("open");
-      toggle.setAttribute("aria-expanded", "false");
-    }));
+    
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".nav-links");
+const menuItems = links.querySelectorAll("a");
 
-    const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = themeToggle.querySelector("i");
+let closeTimer;
 
-function applyTheme(theme) {
-  document.documentElement.dataset.theme = theme;
-  themeIcon.className =
-    theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+toggle.addEventListener("click", () => {
+  clearTimeout(closeTimer);
 
-  localStorage.setItem("theme", theme);
+  const isOpen = links.classList.contains("open");
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    links.classList.remove("closing");
+    links.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+});
+
+function closeMenu() {
+  clearTimeout(closeTimer);
+
+  links.classList.add("closing");
+  toggle.setAttribute("aria-expanded", "false");
+
+  closeTimer = setTimeout(() => {
+    links.classList.remove("open", "closing");
+  }, 450);
 }
+
+menuItems.forEach(link => {
+  link.addEventListener("click", () => {
+    if (links.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+});
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeIcon.className =
+        theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+
+      localStorage.setItem("theme", theme);
+    }
 
 const savedTheme = localStorage.getItem("theme");
 const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chise Ishii | Art Gallery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Petit+Formal+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="site-title" href="https://im-thousandstar.github.io/chiseishii.github.io/">Chise Ishii</a>
+    <nav class="site-nav" aria-label="Main navigation">
+      <a href="https://im-thousandstar.github.io/chiseishii.github.io/">Home</a>
+    </nav>
+  </header>
+
+  <main class="gallery-wrapper">
+    <div class="page-content">
+      <h1 class="gallery-heading">Welcome to my gallery!</h1>
+      <section class="gallery" aria-label="Artwork gallery">
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Poème de l'Extase, Op. 54 (Alexander Scriabin)">
+            <img src="image/scriabin.jpg" alt="Artwork inspired by Scriabin's Poème de l'Extase">
+          </button>
+          <figcaption>Poème de l'Extase, Op. 54 (Alexander Scriabin)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Symphony No. 1, Op. 26, in E major (Alexander Scriabin)">
+            <img src="image/scriabin2.png" alt="Artwork inspired by Scriabin's Symphony No. 1">
+          </button>
+          <figcaption>Symphony No. 1, Op. 26, in E major (Alexander Scriabin)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Fantaisie brillante sur des motifs de l'opéra Faust, Op. 20 (Henryk Wieniawski)">
+            <img src="image/top.png" alt="Artwork inspired by Wieniawski's Fantaisie brillante sur des motifs de Faust">
+          </button>
+          <figcaption>Fantaisie brillante sur des motifs de l'opéra Faust, Op. 20 (Henryk Wieniawski)</figcaption>
+        </figure>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 Chise Ishii</p>
+  </footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
+    <img class="lightbox-image" id="lightbox-image" src="" alt="">
+    <p class="lightbox-caption" id="lightbox-caption"></p>
+  </div>
+
+  <script>
+    (() => {
+      const lightbox = document.getElementById("lightbox");
+      const lightboxImage = document.getElementById("lightbox-image");
+      const lightboxCaption = document.getElementById("lightbox-caption");
+      const closeButton = document.querySelector(".lightbox-close");
+
+      document.querySelectorAll(".artwork-button").forEach((button) => {
+        button.addEventListener("click", () => {
+          const image = button.querySelector("img");
+          lightboxImage.src = image.src;
+          lightboxImage.alt = image.alt;
+          lightboxCaption.textContent = button.dataset.caption || image.alt;
+          lightbox.classList.add("is-open");
+          lightbox.setAttribute("aria-hidden", "false");
+          document.body.classList.add("no-scroll");
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove("is-open");
+        lightbox.setAttribute("aria-hidden", "true");
+        lightboxImage.src = "";
+        document.body.classList.remove("no-scroll");
+      }
+
+      closeButton.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", (event) => {
+        if (event.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") closeLightbox();
+      });
+    })();
+  </script>
+</body>
+</html>
