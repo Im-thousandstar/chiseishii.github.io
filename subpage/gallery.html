@@ -8,6 +8,52 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fira+Code&family=Petit+Formal+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+.gallery-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-top: 1px solid #ddd;
+  color: #777;
+  font-size: 12px;
+  border-bottom: none;
+border-top: none;
+}
+
+.gallery-footer .footer-info {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.gallery-footer .footer-social {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+.gallery-footer .footer-social a {
+  display: inline-flex;
+  align-items: center;
+  color: #777;
+  font-size: 22px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.gallery-footer .footer-social a:hover {
+  color: #a890d3;
+  font-size: 20px;
+}
+</style>
 </head>
 <body>
   <header class="site-header">
@@ -19,7 +65,7 @@
 
   <main class="gallery-wrapper">
     <div class="page-content">
-      <h1 class="gallery-heading">Welcome to my gallery!</h1>
+      <h1 class="gallery-heading">Welcome to my Gallery</h1>
       <section class="gallery" aria-label="Artwork gallery">
         <figure class="gallery-item">
           <button class="artwork-button" type="button" data-caption="Poème de l'Extase, Op. 54 (Alexander Scriabin)">
@@ -39,13 +85,53 @@
           </button>
           <figcaption>Fantaisie brillante sur des motifs de l'opéra Faust, Op. 20 (Henryk Wieniawski)</figcaption>
         </figure>
+                <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Sinfonietta (Korngold)">
+            <img src="image/img8.png" alt="Sinfonietta (Korngold)">
+          </button>
+          <figcaption>Sinfonietta (Korngold)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="General Relativity">
+            <img src="image/img5.jpg" alt="Artwork inspired by General Relativity">
+          </button>
+          <figcaption>General Relativity</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Symphony No. 2 (Brahms)">
+            <img src="image/img9.png" alt="Artwork inspired by Symphony No. 2 (Brahms)">
+          </button>
+          <figcaption>Symphony No. 2 (Brahms)</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="der Rosenkavalier act lll">
+            <img src="image/img4.jpg" alt="Artwork inspired by der Rosenkavalier act lll">
+          </button>
+          <figcaption>der Rosenkavalier act lll</figcaption>
+        </figure>
+        <figure class="gallery-item">
+          <button class="artwork-button" type="button" data-caption="Violin Concert no.2 (Prokofiev)">
+            <img src="image/img6.jpg" alt="Artwork inspired by Violin Concert no.2 (Prokofiev)">
+          </button>
+          <figcaption>Violin Concert no.2 (Prokofiev)</figcaption>
+        </figure>
       </section>
     </div>
   </main>
 
-  <footer class="site-footer">
-    <p>© 2026 Chise Ishii</p>
-  </footer>
+<footer class="gallery-footer">
+  <div class="footer-info">
+    <span>© <span id="year"></span> Chise Ishii</span>
+  </div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/chise.gallery/"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Instagram">
+      <i class="fa fa-instagram"></i>
+    </a>
+  </div>
+</footer>
 
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" type="button" aria-label="Close image preview">&times;</button>
@@ -87,6 +173,9 @@
         if (event.key === "Escape") closeLightbox();
       });
     })();
+  </script>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
