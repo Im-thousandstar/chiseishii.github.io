@@ -43,12 +43,16 @@ a { color: inherit; text-decoration: none; }
 
 .gallery-wrapper {
   min-height: 100vh;
-  padding: 125px 20px 70px;
-  background-image: linear-gradient(rgba(0,0,0,.18), rgba(0,0,0,.28)), url("image/img5.jpg");
+  padding: 125px 20px 40px;
+
+  background-image:
+    linear-gradient(rgba(0, 0, 0, .18), rgba(0, 0, 0, .28)),
+    url("image/img5.jpg");
+
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-attachment: scroll;
 }
 
 .page-content {
@@ -172,4 +176,26 @@ a { color: inherit; text-decoration: none; }
   .gallery-heading { letter-spacing: 1px; }
   .gallery-item figcaption { font-size: 14px; }
   .lightbox { padding-inline: 12px; }
+}
+/* Gallery: two columns on iPhone */
+@media (max-width: 600px) {
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .gallery-item {
+    min-width: 0;
+    max-width: none;
+  }
+
+  .artwork-button {
+    width: 100%;
+  }
+
+  .artwork-button img {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
 }
