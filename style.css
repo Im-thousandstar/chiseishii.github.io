@@ -99,6 +99,17 @@ time, .pub-year { color: var(--muted); font-size: .88rem; font-variant-numeric: 
 .timeline-item { display: grid; grid-template-columns: 125px minmax(0, 1fr); gap: 18px; padding: 10px 0; }
 .contact { border-bottom: 0; }
 footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px 0 28px; color: var(--muted); font-size: .7rem; }
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 16px;
+}
 @media (max-width: 760px) {
   .nav-inner { position: relative; min-height: 58px; }
   .menu-toggle { display: block; margin-left: auto; }
@@ -132,14 +143,28 @@ footer { display: flex; justify-content: space-between; gap: 16px; padding: 22px
     width: 100%;
   }
 
-  footer .footer-social {
-    display: flex;
-    justify-content: flex-start;
-    align-self: flex-start;
-    width: 100%;
-    margin: 12px 0 0 0;
-    padding: 0;
-  }
+ footer .footer-social {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  align-self: flex-start;
+  width: 100%;
+  margin: 12px 0 0 0;
+  padding: 0;
+  gap: 8px;
+}
+
+footer .footer-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+}
+
+footer .footer-note {
+  text-align: left;
+  font-size: 0.8rem;
+}
 }
 
 /* Highlighted keywords */
