@@ -30,6 +30,13 @@
         <!--<a href="#education">Education</a>-->
         <a href="#beyond">Music</a>
       </div>
+      <button class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch color theme"
+        title="Switch color theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
     </div>
   </nav>
 
@@ -38,7 +45,9 @@
       <div class="hero-copy">
         <p class="eyebrow"></p>
         <h1>Chise Ishii</h1>
-        <p class="position">Ph.D. Student @ Keio University<br> <strong>Contact</strong>: chiseblanton125 [at] keio [dot] jp</p>
+        <p class="position"><strong>Ph.D. Student @ Keio University</strong><br>
+          📮: <a href="mailto:chiseblanton125@keio.jp">chiseblanton125 [at] keio [dot] jp</a>
+        </p>
         <p class="intro">
           I am a 2nd-year Ph.D. student in Computer Science at Keio University, advised by Prof. Yasushi Narushima. 
           My research focuses on establishing theoretical guarantees for AI using techniques from <span class="highlight">optimization</span> and <span class="highlight">dynamical systems</span>. 
@@ -212,6 +221,27 @@
       links.classList.remove("open");
       toggle.setAttribute("aria-expanded", "false");
     }));
+
+    const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = themeToggle.querySelector("i");
+
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  themeIcon.className =
+    theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+
+  localStorage.setItem("theme", theme);
+}
+
+const savedTheme = localStorage.getItem("theme");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+applyTheme(savedTheme ||"dark");
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme;
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
+});
   </script>
 </body>
 </html>

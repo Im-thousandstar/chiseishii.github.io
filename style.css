@@ -1,11 +1,11 @@
 /* Clean, understated academic style. Adjust colors in :root. */
 :root {
-  --ink: #2b3036;
-  --muted: #747c85;
-  --accent: #597b96;
-  --accent-pale: #eef3f6;
-  --line: #e8ebee;
-  --paper: #fff;
+  --ink: #303d4d;
+  --muted: #687789;
+  --accent: #8D367D;
+  --accent-pale: #f3eaf2;
+  --line: #dfe5ec;
+  --paper: #ffffff;
   --width: 920px;
 }
 * { box-sizing: border-box; }
@@ -16,7 +16,11 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accent); text-decoration: none; }
-a:hover { color: #304f68; text-decoration: underline; text-underline-offset: 3px; }
+a:hover {
+  color: #6D285F;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
 .navbar {
   position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.96);
   border-bottom: 1px solid var(--line); backdrop-filter: blur(12px);
@@ -28,7 +32,10 @@ a:hover { color: #304f68; text-decoration: underline; text-underline-offset: 3px
 .brand { color: var(--ink); font-weight: 600; white-space: nowrap; }
 .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; }
 .nav-links a { color: #555e67; font-size: .84rem; }
-.nav-links a:hover { color: var(--accent); text-decoration: none; }
+.nav-links a:hover {
+  color: #6D285F;
+  text-decoration: none;
+}
 .menu-toggle { display: none; border: 0; background: transparent; color: var(--ink); font-size: 1.15rem; padding: 8px; }
 .page { width: min(var(--width), calc(100% - 44px)); margin: 0 auto; }
 .hero {
@@ -239,4 +246,205 @@ footer {
 
 .footer-social a:hover {
   color: #a890d3;
+}
+
+
+/* ===== Manual theme switching ===== */
+
+/* Dark theme */
+:root[data-theme="dark"] {
+  color-scheme: dark;
+ --ink: #e5eaf0;
+  --muted: #a9b5c2;
+  --accent: #a5c5e2;
+  --accent-pale: #3b4652;
+  --line: #454b52;
+  --paper: #30353b;
+}
+
+:root[data-theme="dark"] body {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:root[data-theme="dark"] .navbar {
+  background: rgba(25, 23, 31, 0.96);
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .brand,
+:root[data-theme="dark"] .menu-toggle {
+  color: var(--ink);
+}
+
+
+:root[data-theme="dark"] .nav-links a {
+  color: #c5ced8;
+}
+
+:root[data-theme="dark"] .nav-links a:hover {
+  color: #c2dcf5;
+}
+
+:root[data-theme="dark"] .tags span {
+  background: #3b4652;
+  color: #c6ddf2;
+}
+
+:root[data-theme="dark"] .portrait,
+:root[data-theme="dark"] .music-photo {
+  background: #383e45;
+}
+
+:root[data-theme="dark"] .portrait-placeholder,
+:root[data-theme="dark"] .music-photo-placeholder {
+  color: #9ca9b6;
+}
+
+:root[data-theme="dark"] .tags span {
+  background: var(--accent-pale);
+  color: #d0bfff;
+}
+
+:root[data-theme="dark"] .publication + .publication {
+  border-color: var(--line);
+}
+
+:root[data-theme="dark"] .footer-social a {
+  color: var(--muted);
+}
+
+:root[data-theme="dark"] .footer-social a:hover {
+  color: #b6a0e4;
+}
+
+:root[data-theme="dark"] .theme-toggle {
+  background: var(--paper);
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+/* Mobile navigation */
+@media (max-width: 760px) {
+  :root[data-theme="dark"] .nav-links {
+    background: var(--paper);
+    border-color: var(--line);
+  }
+}
+
+/* Smooth transition */
+body,
+.navbar,
+.nav-links,
+.theme-toggle {
+  transition:
+    background-color 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Remove the theme button's box */
+.theme-toggle,
+.theme-toggle:hover,
+.theme-toggle:focus,
+.theme-toggle:focus-visible,
+.theme-toggle:active {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  appearance: none;
+  -webkit-appearance: none;
+}
+
+/* Hamburger menu: vertical layout */
+@media (max-width: 760px) {
+  .nav-links.open {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    gap: 10px !important;
+  }
+
+  .nav-links.open a {
+    display: block;
+    width: 100%;
+    text-align: right;
+  }
+}
+
+
+/* Keep links readable on hover in dark mode */
+:root[data-theme="dark"] a:hover {
+  color: #c2dcf5 !important;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+:root[data-theme="dark"] .nav-links a:hover {
+  color: #c2dcf5 !important;
+}
+
+
+/* Light mode: translucent lavender header */
+:root:not([data-theme="dark"]) .navbar {
+  background: rgba(241, 232, 240, 0.84);
+  border-bottom: 1px solid rgba(196, 166, 193, 0.4);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+:root:not([data-theme="dark"]) .brand {
+  color: #393447;
+}
+
+:root:not([data-theme="dark"]) .nav-links a {
+  color: #665b78;
+}
+
+:root:not([data-theme="dark"]) .nav-links a:hover {
+  color: #80549b;
+}
+
+:root:not([data-theme="dark"]) .theme-toggle {
+  color: #665b78;
+}
+
+
+/* Theme toggle: soft glow on click */
+.theme-toggle {
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease,
+    background-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.12);
+}
+
+.theme-toggle:active {
+  transform: scale(0.88);
+  box-shadow: 0 0 16px rgba(165, 197, 226, 0.45);
+}
+
+.theme-toggle i {
+  transition: transform 0.35s ease;
+}
+.theme-toggle:active {
+  transform: scale(0.78);
+  box-shadow:
+    0 0 12px rgba(165, 197, 226, 0.5),
+    0 0 28px rgba(165, 197, 226, 0.35),
+    0 0 45px rgba(165, 197, 226, 0.2) !important;
+}
+
+.theme-toggle i {
+  transition: transform 0.4s ease;
+}
+
+.theme-toggle:active i {
+  transform: rotate(45deg) scale(1.25);
 }
