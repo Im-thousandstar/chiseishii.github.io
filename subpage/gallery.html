@@ -63,9 +63,17 @@ border-top: none;
     </nav>
   </header>
 
-  <main class="gallery-wrapper">
-    <div class="page-content">
+<main class="gallery-wrapper">
+  <div class="page-content">
+
+    <header class="gallery-header">
       <h1 class="gallery-heading">Welcome to my Gallery</h1>
+
+      <p class="gallery-intro">
+        <span id="typing-text"></span><span class="typing-cursor">|</span>
+      </p>
+    </header>
+    
       <section class="gallery" aria-label="Artwork gallery">
         <figure class="gallery-item">
           <button class="artwork-button" type="button" data-caption="Poème de l'Extase, Op. 54 (Alexander Scriabin)">
@@ -177,5 +185,25 @@ border-top: none;
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const text = "i used to create abstract colors and geometric patterns with code, inspired by music. then generative AI came along, and i stopped :)";
+  const target = document.getElementById("typing-text");
+
+  if (!target) return;
+
+  let index = 0;
+
+  function typeNextCharacter() {
+    if (index >= text.length) return;
+
+    target.textContent += text[index];
+    index++;
+    setTimeout(typeNextCharacter, 35);
+  }
+
+  typeNextCharacter();
+});
+</script>
 </body>
 </html>
