@@ -579,6 +579,9 @@ footer {
   .nav-links.open:not(.closing) a:nth-child(4) {
     animation-delay: 0.26s;
   }
+  .nav-links.open:not(.closing) a:nth-child(5) {
+  animation-delay: 0.33s;
+}
 
   /* Closing: bottom to top */
   .nav-links.closing {
