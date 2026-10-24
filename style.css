@@ -457,20 +457,34 @@ footer {
 
 .footer-social {
   display: flex;
-  justify-content: center; /* 右寄せ → 中央 */
+  justify-content: center;
   align-items: center;
-  gap: 22px;              /* アイコン同士の間隔 */
-  margin-top: 16px;
+  flex-wrap: wrap;
+  gap: 22px;
+  width: 100%;
+  margin: 20px auto 0;
+  text-align: center;
 }
 
 .footer-social a {
-  color: var(--muted);
-  font-size: 1.4rem;      /* 1rem → 少し大きく */
-  transition: color 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: inherit;
+  font-size: 25px;
+  line-height: 1;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .footer-social a:hover {
   color: #80549b;
+}
+.footer-social .footer-note {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 13px;
+  line-height: 1.5;
 }
 
 :root[data-theme="dark"] .footer-social a:hover {
@@ -662,27 +676,23 @@ footer {
     width: 100%;
   }
 
-  footer .footer-social {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
-    align-self: flex-start;
-    width: 100%;
-    margin: 12px 0 0;
-    padding: 0;
-    gap: 8px;
+  .footer-social {
+    gap: 20px;
+    margin-top: 18px;
+  }
+
+  .footer-social a {
+    font-size: 27px;
+  }
+
+  .footer-social .footer-note {
+    font-size: 12px;
   }
 
   footer .footer-icons {
     display: flex;
     flex-direction: row;
     gap: 16px;
-  }
-
-  footer .footer-note {
-    text-align: left;
-    font-size: 0.8rem;
   }
 }
 
