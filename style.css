@@ -457,10 +457,12 @@ footer {
 
 .footer-social {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 22px;
+  column-gap: 22px;
+  row-gap: 16px;
   width: 100%;
   margin: 20px auto 0;
   text-align: center;
@@ -470,8 +472,9 @@ footer {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
   color: inherit;
-  font-size: 25px;
+  font-size: 27px;
   line-height: 1;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
@@ -480,8 +483,10 @@ footer {
 .footer-social a:hover {
   color: #80549b;
 }
+
 .footer-social .footer-note {
-  flex-basis: 100%;
+  flex: 0 0 100%;
+  width: 100%;
   text-align: center;
   font-size: 13px;
   line-height: 1.5;
@@ -517,7 +522,7 @@ footer {
     width: max-content;
     min-width: 120px;
     max-width: calc(100vw - 34px);
-    flex-direction: column;
+    flex-direction: row;
     align-items: flex-end;
     gap: 10px;
     margin: 0;
