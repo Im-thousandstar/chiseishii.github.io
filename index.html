@@ -21,17 +21,32 @@
       <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <i class="fa-solid fa-bars"></i>
       </button>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <!--<a href="#news">News</a>-->
-        <!--<a href="#research">Research</a>-->
-        <a href="#publications">Publications</a>
-        <a href="cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
-        <!--<a href="#experience">Experience</a>-->
-        <!--<a href="#education">Education</a>-->
-        <a href="#beyond">Music</a>
-        <a href="/chiseishii.github.io/subpage/gallery.html">Gallery</a>
-      </div>
+      
+<div class="nav-links">
+  <a href="#about">About</a>
+  <!--<a href="#news">News</a>-->
+  <!--<a href="#research">Research</a>-->
+  <a href="#publications">Publications</a>
+  <a href="cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+
+  <div class="nav-dropdown">
+    <button
+      class="dropdown-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-haspopup="true"
+    >
+      Others
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <div class="dropdown-menu">
+      <a href="#beyond">Music</a>
+      <a href="/chiseishii.github.io/subpage/gallery.html">Gallery</a>
+    </div>
+  </div>
+</div>
+
       <button class="theme-toggle"
         id="theme-toggle"
         type="button"
@@ -281,6 +296,31 @@ themeToggle.addEventListener("click", () => {
   const currentTheme = document.documentElement.dataset.theme;
   applyTheme(currentTheme === "dark" ? "light" : "dark");
 });
+
+
+document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+
+  toggle.addEventListener("click", () => {
+    const isOpen = dropdown.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  dropdown.querySelectorAll(".dropdown-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      dropdown.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+});
+
   </script>
 </body>
 </html>
