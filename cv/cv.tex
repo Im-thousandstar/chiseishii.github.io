@@ -44,6 +44,19 @@
   \end{minipage}\par\vspace{6pt}
 }
 
+\newcommand{\educationentrysmall}[3]{%
+  \noindent
+  \begin{minipage}[t]{\linewidth}
+    \begin{minipage}[t]{0.70\linewidth}
+      {\small #1}\\
+      {\footnotesize #3}
+    \end{minipage}%
+    \begin{minipage}[t]{0.30\linewidth}
+      \raggedleft{\footnotesize #2}
+    \end{minipage}
+  \end{minipage}\par\vspace{4pt}
+}
+
 \newcommand{\experienceentry}[3]{%
   \noindent
   \begin{minipage}[t]{\linewidth}
@@ -102,7 +115,7 @@
   {M.S., Science, Waseda University, Japan}
   {April 2020 -- March 2022}
   {Graduate School of Fundamental Science and Engineering}
-  {Department of Mathematics and Applied Mathematics}
+  {Department of Pure and Applied Mathematics}
 
 \educationentry
   {B.S., Science, Waseda University, Japan}
@@ -110,6 +123,10 @@
   {School of Fundamental Science and Engineering}
   {Department of Mathematics (Minor in Applied Mechanics and Aerospace Engineering)}
 
+\educationentrysmall
+  {UCLA Extension, USA}
+  {Summer 2017}
+  {American Language Center (ALC)}
 % =========================================================
 \section{Publications}
 
@@ -176,6 +193,11 @@
   {Dec 2019 -- Jan 2022}
   {Tokyo, Japan}
 
+\experienceentry
+  {Software Development (Student Intern), Fujitsu}
+  {Summer 2020}
+  {Tokyo, Japan}
+
 % =========================================================
 \section{Teaching Experience}
 
@@ -183,6 +205,26 @@
   {Applied Practical Data Science and Artificial Intelligence 2B}
   {June 2026}
   {Lecturer, Tokyo University of Science}
+
+\experienceentry
+  {Programming for Computer Algebra}
+  {Fall 2020 / 2021}
+  {Teaching Assistant, Waseda University}
+
+\experienceentry
+  {Introduction to Computing}
+  {Spring 2020 / 2021}
+  {Teaching Assistant, Waseda University}
+
+  %\experienceentry
+  %{Mathematical Methods in Physics (Vector Analysis)}
+  %{Fall 2019}
+  %{Teaching Assistant, Waseda University}
+
+  \experienceentry
+  {Mathematics B2 (Calculus)}
+  {2019}
+  {Teaching Assistant, Waseda University}
 
 % =========================================================
 \section{Academic Service}
