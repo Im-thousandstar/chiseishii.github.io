@@ -255,7 +255,7 @@ h1 {
 .affiliation {
   margin: 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.88rem;
 }
 
 .intro {
@@ -459,6 +459,12 @@ time,
 .contact {
   border-bottom: 0;
 }
+.affiliation-divider {
+  border: none;
+  border-top: 1px solid rgba(128, 128, 128, 0.2);
+  width: 60%;
+  margin: 20px 0 15px;
+}
 
 /* 6. Beyond research */
 .beyond-content {
@@ -502,6 +508,9 @@ footer {
   width: 100%;
   margin: 20px auto 0;
   text-align: center;
+}
+.footer-social .ai-google-scholar {
+  font-size: 1.2em;
 }
 
 .footer-social a {
