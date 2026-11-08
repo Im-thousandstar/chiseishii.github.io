@@ -1015,8 +1015,8 @@ footer {
 /* iPhone: Music photo only */
 @media (max-width: 500px) {
   .hero .music-photo {
-    width: 115px !important;
-    max-width: 115px;
+    width: 140px !important;
+    max-width: 140px;
     height: auto !important;
     aspect-ratio: auto !important;
   }
