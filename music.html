@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- <meta name="description" content="Personal academic homepage"> -->
+  <title>Chise Ishii | 石井 千星</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎻</text></svg>">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="#home">Chise Ishii | 石井 千星</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+<div class="nav-links">
+  <a href="index.html#about">About</a>
+  <!--<a href="#news">News</a>-->
+  <!--<a href="#research">Research</a>-->
+  <a href="index.html#publications">Publications</a>
+  <a href="cv/cv.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+
+  <div class="nav-dropdown">
+    <button
+      class="dropdown-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-haspopup="true"
+    >
+      Others
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <div class="dropdown-menu">
+      <a href="music.html">Music</a>
+      <a href="/chiseishii.github.io/subpage/gallery.html">Gallery</a>
+    </div>
+  </div>
+</div>
+
+      <button class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch color theme"
+        title="Switch color theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
+    </div>
+  </nav>
+
+  <main class="page" id="home">
+    <header class="hero" id="about">
+      <div class="hero-copy">
+        <p class="eyebrow"></p>
+        <h1>Chise Ishii</h1>
+        <p class="position"><strong>Ph.D. Student @ Keio University</strong><br></p>
+        <p class="intro">
+            In my spare time, I enjoy playing the violin. I began studying the violin at the age of five, and classical music has been an important part of my life ever since.
+            In 2013, I appeared as a soloist at the Altenburger Musikfestival. As an undergraduate, I served as concertmaster for the Waseda Symphony Orchestra's 2018 European tour, performing in 12 cities, including the Berlin Philharmonie and the Musikverein in Vienna. In 2019, I performed Tchaikovsky's Violin Concerto with the orchestra, conducted by Daisuke Soga. 
+            In 2023, I was selected for the <a href="https://www.youtube.com/watch?v=G9Z5DhcLSh0">Be Phil Orchestra 2023 Japan</a>, organized by the Berliner Philharmoniker, and performed under the baton of Kirill Petrenko, alongside Daishin Kashimoto, Ludwig Quandt, and other distinguished musicians. 
+            I have studied with Fumi Koseki and Yasuko Ohtani and participated in masterclasses with members of the Bayreuth Festival Quartet, as well as Mayumi Kanagawa, Reiko Watanabe, Simon James, and Sulki Yu.
+            I have also participated in the Chofu International Music Festival and various music festivals and masterclasses in Japan and abroad, including in the United States and Italy.
+        </p>
+      <!--
+    <div class="social-links" aria-label="Academic and contact links">
+          <a href="mailto:chiseblanton125@keio.jp" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/chise-ishii/"
+          target="_blank" rel="noopener noreferrer"
+          aria-label="LinkedIn" title="LinkedIn">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+        <a href="https://scholar.google.com/citations?user=xlU7yAkAAAAJ&hl=ja"
+        target="_blank" rel="noopener noreferrer"
+        aria-label="Google Scholar" title="Google Scholar">
+        <i class="ai ai-google-scholar"></i>
+        </a>
+        <a href="https://researchmap.jp/chise_ishii"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Researchmap">
+          <i class="fa-regular fa-id-badge"></i>
+        </a>
+        </div>-->
+      
+        <!-- <hr class="affiliation-divider">
+        <p class="affiliation">
+          Graduate School of Science and Technology,<br>
+          Keio University,<br>
+          <span class="address-line">
+          <i class="fa-solid fa-location-dot"></i>
+          3-14-1 Hiyoshi, Kohoku-ku, Yokohama, 223-8522, Kanagawa, Japan
+          </span>
+        </p>
+      -->
+        </div>
+        
+      <div class="portrait music-photo">
+        <img src="assets/profile2.jpg" alt="Profile photo"
+            onerror="this.style.display='none'; this.nextElementSibling.style.display='grid';">
+        <div class="portrait-placeholder"><i class="fa-regular fa-image"></i><span>Photo</span></div>
+      </div>
+    </header>
+
+<footer>
+  <div class="footer-info">
+    <span>© <span id="year"></span> Chise Ishii</span>
+    </div>
+
+<div class="footer-social">
+    <a href="https://github.com/Im-thousandstar/chiseishii.github.io" target="_blank" rel="noopener noreferrer">
+      <i class="fa-brands fa-github"></i>
+    </a>
+    <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="X">
+      <i class="fa-brands fa-x-twitter"></i>
+    </a> -->
+    <a href="/chiseishii.github.io/subpage/gallery.html"
+        class="gallery-link"
+        aria-label="Art Gallery"
+        title="Art Gallery">
+        <span class="gallery-hint">Click to explore!</span>
+        <i class="fa-solid fa-palette"></i>
+    </a>
+  <span class="footer-note">Some links are still under construction :)</span>
+</div>
+</footer>
+
+</main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+    
+const toggle = document.querySelector(".menu-toggle");
+const links = document.querySelector(".nav-links");
+const menuItems = links.querySelectorAll("a");
+
+let closeTimer;
+
+toggle.addEventListener("click", () => {
+  clearTimeout(closeTimer);
+
+  const isOpen = links.classList.contains("open");
+
+  if (isOpen) {
+    closeMenu();
+  } else {
+    links.classList.remove("closing");
+    links.classList.add("open");
+    toggle.setAttribute("aria-expanded", "true");
+  }
+});
+
+function closeMenu() {
+  clearTimeout(closeTimer);
+
+  links.classList.add("closing");
+  toggle.setAttribute("aria-expanded", "false");
+
+  closeTimer = setTimeout(() => {
+    links.classList.remove("open", "closing");
+  }, 450);
+}
+
+menuItems.forEach(link => {
+  link.addEventListener("click", () => {
+    if (links.classList.contains("open")) {
+      closeMenu();
+    }
+  });
+});
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeIcon.className =
+        theme === "dark" ? "fa-solid fa-sun" : "fa-solid fa-moon";
+
+      localStorage.setItem("theme", theme);
+    }
+
+const savedTheme = localStorage.getItem("theme");
+const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+applyTheme(savedTheme ||"dark");
+
+themeToggle.addEventListener("click", () => {
+  const currentTheme = document.documentElement.dataset.theme;
+  applyTheme(currentTheme === "dark" ? "light" : "dark");
+});
+
+
+document.querySelectorAll(".nav-dropdown").forEach((dropdown) => {
+  const toggle = dropdown.querySelector(".dropdown-toggle");
+
+  toggle.addEventListener("click", () => {
+    const isOpen = dropdown.classList.toggle("open");
+    toggle.setAttribute("aria-expanded", String(isOpen));
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!dropdown.contains(event.target)) {
+      dropdown.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    }
+  });
+
+  dropdown.querySelectorAll(".dropdown-menu a").forEach((link) => {
+    link.addEventListener("click", () => {
+      dropdown.classList.remove("open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
+  });
+});
+
+  </script>
+</body>
+</html>
