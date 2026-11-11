@@ -1,0 +1,42 @@
+[
+  {
+    "year": 2026,
+    "title": "Convergence Analysis via ODE Approach for Convex Optimization with Linear Constraints",
+    "authors": "<strong>Chise Ishii*</strong>, Yasushi Narushima",
+    "venue": "The 24th Conference of the International Federation of Operational Research Societies",
+    "type": "Oral Presentation",
+    "location": "Vienna, Austria",
+    "conference": "IFORS 2026",
+    "links": []
+  },
+  {
+    "year": 2026,
+    "title": "Convergence Analysis and Discretization Methods via an ODE Approach for Convex Optimization Problems with Linear Constraints",
+    "authors": "<strong>Chise Ishii*</strong>, Yasushi Narushima",
+    "venue": "The 22nd Annual Meeting of the Japan Society for Industrial and Applied Mathematics",
+    "type": "Oral Presentation",
+    "location": "Tokyo, Japan",
+    "conference": "JSIAM 2026",
+    "links": []
+  },
+  {
+    "year": 2025,
+    "title": "Convergence Analysis via an ODE Approach for Convex Optimization Problems with Equality Constraints",
+    "authors": "<strong>Chise Ishii*</strong>, Yasushi Narushima",
+    "venue": "The 28th Information-Based Induction Sciences Workshop",
+    "type": "Poster Presentation",
+    "location": "Okinawa, Japan",
+    "conference": "IBIS 2025",
+    "links": []
+  },
+  {
+    "year": 2025,
+    "title": "Analysis of the Convergence Behavior of ADMM-Type Algorithms via an ODE Approach",
+    "authors": "<strong>Chise Ishii*</strong>, Yasushi Narushima",
+    "venue": "RIMS Joint Research Workshop, \"Frontiers of Mathematical Optimization\"",
+    "type": "Oral Presentation",
+    "location": "Kyoto, Japan",
+    "conference": "RIMS Workshop 2025",
+    "links": []
+  }
+]

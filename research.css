@@ -1,0 +1,107 @@
+/* Shared card design for Publications and Presentations */
+.research-list {
+  display: grid;
+  gap: 14px;
+}
+
+.research-card {
+  display: grid;
+  grid-template-columns: 58px minmax(0, 1fr);
+  gap: 15px;
+  padding: 18px 20px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+  transition: border-color 0.2s ease, transform 0.2s ease,
+              box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.research-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--accent);
+  box-shadow: 0 5px 18px rgba(40, 45, 55, 0.07);
+}
+
+.research-year {
+  padding-top: 3px;
+  color: var(--muted);
+  font-size: 0.88rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.research-card h3 {
+  margin: 0 0 5px;
+  color: var(--ink);
+  font-size: 0.98rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.research-card .authors,
+.research-card .venue,
+.research-card .research-location,
+.research-card .research-type {
+  margin: 3px 0 !important;
+  font-size: 0.88rem;
+}
+
+.research-card .authors,
+.research-card .research-location,
+.research-card .research-type {
+  color: var(--muted);
+}
+
+.research-card .venue {
+  color: var(--muted);
+  font-size: 0.84rem;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.research-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px 10px;
+  margin-top: 8px;
+}
+
+.research-tags {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 10px;
+  row-gap: 6px;
+  margin-top: 8px;
+}
+.research-tag {
+  display: inline-block;
+  padding: 2px 9px;
+  border-radius: 5px;
+  background: var(--accent-pale);
+  color: var(--accent);
+  font-size: 0.76rem;
+  font-weight: 600;
+  line-height: 1.7;
+}
+
+.research-card .paper-links {
+  margin-top: 9px;
+}
+
+.research-empty,
+.research-error {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+:root[data-theme="dark"] .research-card:hover {
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 500px) {
+  .research-card {
+    grid-template-columns: 44px minmax(0, 1fr);
+    gap: 10px;
+    padding: 15px 13px;
+  }
+}
