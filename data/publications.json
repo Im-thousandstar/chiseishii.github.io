@@ -5,12 +5,6 @@
     "authors": "<strong>Chise Ishii*</strong>, Yasushi Narushima",
     "type": "Under Review",
     "location": "",
-    "links": [
-      {
-        "label": "arXiv",
-        "url": "https://arxiv.org/abs/2605.17819",
-        "icon": "fa-solid fa-arrow-up-right-from-square"
-      }
-    ]
+    "links": [{"label": "arXiv","url": "https://arxiv.org/abs/2605.17819","icon": "fa-solid fa-arrow-up-right-from-square"}]
   }
 ]
