@@ -612,23 +612,24 @@ footer {
 /* Mobile navigation menu */
 .nav-links.open,
 .nav-links.closing {
-  background: rgba(248, 243, 250, 0.92);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
+  background: rgba(241, 232, 240, 0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 
-  border: 1px solid rgba(196, 166, 193, 0.35);
-  border-radius: 12px;
+  /* border: 1px solid rgba(196, 166, 193, 0.35); */
+  border-radius: 0px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+  right: calc((100% - 100vw) / 2);
 
-  padding: 12px 18px 16px;
+  padding: 12px 22px 16px;
   gap: 12px;
 }
 
 /* Dark mode */
 :root[data-theme="dark"] .nav-links.open,
 :root[data-theme="dark"] .nav-links.closing {
-  background: rgba(38, 42, 49, 0.94);
-  border-color: rgba(255, 255, 255, 0.10);
+  background: rgba(25, 23, 31, 0.60);
+  /* border-color: rgba(255, 255, 255, 0.10); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
 
