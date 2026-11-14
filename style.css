@@ -612,7 +612,7 @@ footer {
 /* Mobile navigation menu */
 .nav-links.open,
 .nav-links.closing {
-  background: rgba(241, 232, 240, 0.55);
+  background: rgba(241, 232, 240, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
@@ -628,7 +628,7 @@ footer {
 /* Dark mode */
 :root[data-theme="dark"] .nav-links.open,
 :root[data-theme="dark"] .nav-links.closing {
-  background: rgba(25, 23, 31, 0.60);
+  background: rgba(25, 23, 31, 0.84);
   /* border-color: rgba(255, 255, 255, 0.10); */
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
 }
