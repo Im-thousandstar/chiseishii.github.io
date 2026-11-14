@@ -83,9 +83,11 @@
     </div>
 
 <div class="footer-social">
+  <!--
     <a href="https://github.com/Im-thousandstar/chiseishii.github.io" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-github"></i>
     </a>
+    -->
     <a href="subpage/gallery.html"
         class="gallery-link"
         aria-label="Art Gallery"
@@ -93,8 +95,7 @@
         <span class="gallery-hint">Click to explore!</span>
         <i class="fa-solid fa-palette"></i>
     </a>
-  <!--<span class="footer-note">Some links are still under construction :)</span>-->
-</div>
+  </div>
 </footer>
 
 </main>
@@ -104,6 +105,7 @@
     
 const toggle = document.querySelector(".menu-toggle");
 const links = document.querySelector(".nav-links");
+const menuIcon = toggle.querySelector("i");
 const menuItems = links.querySelectorAll("a");
 
 let closeTimer;
@@ -118,6 +120,8 @@ toggle.addEventListener("click", () => {
   } else {
     links.classList.remove("closing");
     links.classList.add("open");
+    menuIcon.className = "fa-solid fa-xmark";
+    toggle.setAttribute("aria-label", "Close navigation");
     toggle.setAttribute("aria-expanded", "true");
   }
 });
@@ -127,6 +131,8 @@ function closeMenu() {
 
   links.classList.add("closing");
   toggle.setAttribute("aria-expanded", "false");
+  menuIcon.className = "fa-solid fa-bars";
+  toggle.setAttribute("aria-label", "Open navigation");
 
   closeTimer = setTimeout(() => {
     links.classList.remove("open", "closing");

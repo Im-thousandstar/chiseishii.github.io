@@ -609,14 +609,41 @@ footer {
     padding: 4px 0;
     text-align: right;
   }
+/* Mobile navigation menu */
+.nav-links.open,
+.nav-links.closing {
+  background: rgba(248, 243, 250, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
 
-  .nav-links.open {
-    background: transparent !important;
-    backdrop-filter: none !important;
-    -webkit-backdrop-filter: none !important;
-    border: none !important;
-    box-shadow: none !important;
-  }
+  border: 1px solid rgba(196, 166, 193, 0.35);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+
+  padding: 12px 18px 16px;
+  gap: 12px;
+}
+
+/* Dark mode */
+:root[data-theme="dark"] .nav-links.open,
+:root[data-theme="dark"] .nav-links.closing {
+  background: rgba(38, 42, 49, 0.94);
+  border-color: rgba(255, 255, 255, 0.10);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Menu text */
+.nav-links.open > a,
+.nav-links.closing > a {
+  font-size: 1rem;
+  padding: 7px 4px;
+  line-height: 1.5;
+}
+
+/* Hamburger / close icon */
+.menu-toggle i {
+  transition: transform 0.25s ease;
+}
 
   :root[data-theme="dark"] .nav-links {
     background: transparent;

@@ -70,7 +70,7 @@
           My research interests lie broadly in <span class="highlight">continuous optimization</span>, <span class="highlight">dynamical systems</span>, and <span class="highlight">machine learning</span>, with a focus on applying these techniques to establish theoretical foundations for AI.
           I am particularly interested in developing methods to enhance the safety and reliability of neural networks.
           <br><br>
-          Previously, I completed my B.S. and M.S. degrees in mathematics, during which I studied numerical schemes for solving a PDE.
+          Previously, I completed my B.S. and M.S. degrees in mathematics at Waseda University, during which I studied numerical schemes for solving a PDE.
           This work naturally led me to develop an interest in optimization algorithms and their theoretical foundations.
           Taking the continuous-time limit reveals connections between numerical schemes and optimization algorithms through ODEs /  SDEs.
           This connection has motivated me to approach my research from a dynamical systems perspective.
@@ -141,20 +141,13 @@
   <div class="footer-info">
     <span>© <span id="year"></span> Chise Ishii</span>
     </div>
-
+<!--
 <div class="footer-social">
     <a href="https://github.com/Im-thousandstar/chiseishii.github.io" target="_blank" rel="noopener noreferrer">
       <i class="fa-brands fa-github"></i>
     </a>
-    <a href="subpage/gallery.html"
-        class="gallery-link"
-        aria-label="Art Gallery"
-        title="Art Gallery">
-        <span class="gallery-hint">Click to explore!</span>
-        <i class="fa-solid fa-palette"></i>
-    </a>
-  <!--<span class="footer-note">Some links are still under construction :)</span>-->
 </div>
+-->
 </footer>
 
 </main>
@@ -165,6 +158,7 @@
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const menuIcon = menuToggle.querySelector("i");
     const menuItems = navLinks.querySelectorAll("a");
     let closeTimer;
 
@@ -175,7 +169,9 @@
       } else {
         navLinks.classList.remove("closing");
         navLinks.classList.add("open");
+        menuIcon.className = "fa-solid fa-xmark";
         menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation");
       }
     });
 
@@ -183,6 +179,8 @@
       clearTimeout(closeTimer);
       navLinks.classList.add("closing");
       menuToggle.setAttribute("aria-expanded", "false");
+      menuIcon.className = "fa-solid fa-bars";
+      menuToggle.setAttribute("aria-label", "Open navigation");
       closeTimer = setTimeout(() => {
         navLinks.classList.remove("open", "closing");
       }, 450);
