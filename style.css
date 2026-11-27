@@ -171,6 +171,8 @@ a:hover {
 .theme-toggle {
   flex-shrink: 0;
   padding: 8px;
+  /* Cancel the padding so the icon lines up with the page's right edge. */
+  margin-right: -8px;
   border: 0;
   border-radius: 0;
   outline: none;
@@ -1051,5 +1053,116 @@ footer {
   .hero .music-photo img {
     width: 100%;
     height: auto;
+  }
+}
+
+/* 10. Photo carousel (coverflow) */
+.photo-section {
+  border-bottom: none;
+  padding: 40px 0 20px;
+}
+
+.photo-carousel {
+  --card-h: 300px;
+  --step: 140px;
+  --angle: 40deg;
+}
+
+.photo-stage {
+  position: relative;
+  height: calc(var(--card-h) + 70px);
+  perspective: 1000px;
+  overflow: hidden;
+  touch-action: pan-y;
+}
+
+.photo-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: var(--card-h);
+  margin: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--line);
+  box-shadow: 0 10px 24px rgba(30, 40, 55, 0.18);
+  cursor: pointer;
+  transition: transform 0.55s cubic-bezier(0.22, 0.8, 0.3, 1),
+              opacity 0.55s ease, filter 0.55s ease;
+}
+
+.photo-carousel:not(.ready) .photo-card {
+  transition: none;
+}
+
+.photo-card img {
+  display: block;
+  width: auto;
+  height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+:root[data-theme="dark"] .photo-card {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+}
+
+.photo-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-top: 6px;
+}
+
+.photo-arrow {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  color: var(--muted);
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+}
+
+.photo-arrow:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.photo-arrow:active {
+  transform: scale(0.94);
+}
+
+.photo-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.photo-dots button {
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--line);
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.photo-dots button.active {
+  background: var(--muted);
+  transform: scale(1.15);
+}
+
+@media (max-width: 640px) {
+  .photo-carousel {
+    --card-h: 220px;
+    --step: 95px;
   }
 }

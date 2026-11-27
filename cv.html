@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CV | Chise Ishii</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥨</text></svg>">
+  <link rel="stylesheet" href="style.css"><link rel="stylesheet" href="research.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.4/css/academicons.min.css">
+  <link rel="stylesheet" href="cv.css">
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a class="brand" href="index.html#home">Chise Ishii | 石井 千星</a>
+      <button class="menu-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      
+<div class="nav-links">
+  <a href="index.html#about">About</a>
+  <!--<a href="#news">News</a>-->
+  <a href="index.html#publications">Publications</a>
+  <a href="cv.html" aria-current="page">CV</a>
+  <a href="music.html">Other</a>
+
+  <!-- <div class="nav-dropdown">
+    <button
+      class="dropdown-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-haspopup="true"
+    >
+      Others
+      <i class="fa-solid fa-chevron-down"></i>
+    </button>
+
+    <div class="dropdown-menu">
+      <a href="music.html">Music</a>
+      <a href="/chiseishii.github.io/subpage/gallery.html">Gallery</a>
+    </div>
+  </div>-->
+</div>
+
+
+      <button class="theme-toggle"
+        id="theme-toggle"
+        type="button"
+        aria-label="Switch color theme"
+        title="Switch color theme">
+  <i class="fa-solid fa-moon"></i>
+</button>
+    </div>
+  </nav>
+
+  <main class="page cv-page" id="home">
+    <header class="cv-header">
+      <h1>Curriculum Vitae</h1>
+      <a class="cv-button" href="cv/cv.pdf" download>
+        <i class="fa-solid fa-download" aria-hidden="true"></i>Download
+      </a>
+    </header>
+
+    <section class="cv-section" id="experience">
+      <h2>Education and Professional Experience</h2>
+      <div class="cv-card">
+        <article class="cv-entry">
+          <div class="cv-date"><span class="cv-badge">Apr 2025 – Present</span></div>
+          <div class="cv-body">
+            <h3>Ph.D. Student in Engineering</h3>
+            <p class="cv-org"><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Keio University, Japan</p>
+          </div>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-date"><span class="cv-badge">Apr 2025 – Present</span></div>
+          <div class="cv-body">
+            <h3>Collaborative Researcher</h3>
+            <p class="cv-org"><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Keio AI Research Center, Japan</p>
+          </div>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-date"><span class="cv-badge">Apr 2022 – Present</span></div>
+          <div class="cv-body">
+            <h3>MUFG Bank, Vice President</h3>
+            <p class="cv-org"><i class="fa-solid fa-building" aria-hidden="true"></i>Mitsubishi UFJ Financial Group, Inc., Japan</p>
+          </div>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-date"><span class="cv-badge">Apr 2020 – Mar 2022</span></div>
+          <div class="cv-body">
+            <h3>M.S. in Pure and Applied Mathematics</h3>
+            <p class="cv-org"><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Waseda University, Japan</p>
+          </div>
+        </article>
+        <article class="cv-entry">
+          <div class="cv-date"><span class="cv-badge">Apr 2016 – Mar 2020</span></div>
+          <div class="cv-body">
+            <h3>B.S. in Mathematics</h3>
+            <p class="cv-org"><i class="fa-solid fa-building-columns" aria-hidden="true"></i>Waseda University, Japan</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+<footer>
+  <div class="footer-info">
+    <span>© <span id="year"></span> Chise Ishii</span>
+  </div>
+</footer>
+
+</main>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    const menuIcon = menuToggle.querySelector("i");
+    const menuItems = navLinks.querySelectorAll("a");
+    let closeTimer;
+
+    menuToggle.addEventListener("click", () => {
+      clearTimeout(closeTimer);
+      if (navLinks.classList.contains("open")) {
+        closeMenu();
+      } else {
+        navLinks.classList.remove("closing");
+        navLinks.classList.add("open");
+        menuIcon.className = "fa-solid fa-xmark";
+        menuToggle.setAttribute("aria-expanded", "true");
+        menuToggle.setAttribute("aria-label", "Close navigation");
+      }
+    });
+
+    function closeMenu() {
+      clearTimeout(closeTimer);
+      navLinks.classList.add("closing");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuIcon.className = "fa-solid fa-bars";
+      menuToggle.setAttribute("aria-label", "Open navigation");
+      closeTimer = setTimeout(() => {
+        navLinks.classList.remove("open", "closing");
+      }, 450);
+    }
+
+    menuItems.forEach(link => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("open")) closeMenu();
+      });
+    });
+
+    const themeToggle = document.getElementById("theme-toggle");
+    const themeIcon = themeToggle.querySelector("i");
+
+    function applyTheme(theme) {
+      document.documentElement.dataset.theme = theme;
+      themeIcon.className = theme === "dark"
+        ? "fa-solid fa-sun"
+        : "fa-solid fa-moon";
+      localStorage.setItem("theme", theme);
+    }
+
+    applyTheme(localStorage.getItem("theme") || "dark");
+
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = document.documentElement.dataset.theme;
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+
+    document.querySelectorAll(".nav-dropdown").forEach(dropdown => {
+      const dropdownToggle = dropdown.querySelector(".dropdown-toggle");
+      dropdownToggle.addEventListener("click", () => {
+        const isOpen = dropdown.classList.toggle("open");
+        dropdownToggle.setAttribute("aria-expanded", String(isOpen));
+      });
+      document.addEventListener("click", event => {
+        if (!dropdown.contains(event.target)) {
+          dropdown.classList.remove("open");
+          dropdownToggle.setAttribute("aria-expanded", "false");
+        }
+      });
+      dropdown.querySelectorAll(".dropdown-menu a").forEach(link => {
+        link.addEventListener("click", () => {
+          dropdown.classList.remove("open");
+          dropdownToggle.setAttribute("aria-expanded", "false");
+        });
+      });
+    });
+  </script>
+</body>
+</html>

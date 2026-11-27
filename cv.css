@@ -1,0 +1,152 @@
+/* CV page */
+.cv-page {
+  --badge-bg: #2f5563;
+  --badge-ink: #ffffff;
+  --org-icon: #2f5563;
+}
+
+:root[data-theme="dark"] .cv-page {
+  --badge-bg: #a5c5e2;
+  --badge-ink: #1f2a35;
+  --org-icon: #a5c5e2;
+}
+
+.cv-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 56px 0 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.cv-header h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.cv-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.cv-button:hover {
+  background: var(--accent-pale);
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.cv-section {
+  padding: 32px 0 8px;
+}
+
+.cv-section h2 {
+  margin: 0 0 16px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.cv-card {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--paper);
+}
+
+.cv-entry {
+  display: grid;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 18px;
+  padding: 22px 24px;
+}
+
+.cv-entry + .cv-entry {
+  border-top: 1px solid var(--line);
+}
+
+.cv-date {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding-top: 2px;
+}
+
+.cv-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  background: var(--badge-bg);
+  color: var(--badge-ink);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  text-transform: uppercase;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.cv-body h3 {
+  margin: 0 0 6px;
+  color: var(--ink);
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.cv-org {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin: 0;
+  color: var(--ink);
+}
+
+.cv-org i {
+  width: 18px;
+  color: var(--org-icon);
+  text-align: center;
+}
+
+.cv-notes {
+  margin: 12px 0 0;
+  padding-left: 48px;
+  list-style: circle;
+}
+
+.cv-notes li + li {
+  margin-top: 2px;
+}
+
+@media (max-width: 640px) {
+  .cv-header {
+    padding-top: 36px;
+  }
+
+  .cv-entry {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 8px;
+    padding: 18px 16px;
+  }
+
+  .cv-date {
+    justify-content: flex-start;
+  }
+
+  .cv-notes {
+    padding-left: 30px;
+  }
+}
