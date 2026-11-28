@@ -2,8 +2,8 @@
 :root {
   --ink: #303d4d;
   --muted: #687789;
-  --accent: #8d367d;
-  --accent-pale: #f3eaf2;
+  --accent: #2f6672;
+  --accent-pale: #e7f0f1;
   --line: #dfe5ec;
   --paper: #ffffff;
   --width: 920px;
@@ -44,7 +44,7 @@ a {
 }
 
 a:hover {
-  color: #6d285f;
+  color: #1f4954;
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -62,8 +62,8 @@ a:hover {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(241, 232, 240, 0.84);
-  border-bottom: 1px solid rgba(196, 166, 193, 0.4);
+  background: rgba(232, 241, 241, 0.84);
+  border-bottom: 1px solid rgba(160, 192, 196, 0.4);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
@@ -87,7 +87,7 @@ a:hover {
 }
 
 .brand {
-  color: #393447;
+  color: #263a40;
   font-weight: 600;
   white-space: nowrap;
 }
@@ -114,14 +114,14 @@ a:hover {
 
 .nav-links > a,
 .nav-links .dropdown-toggle {
-  color: #665b78;
+  color: #4b636a;
   font-size: 0.84rem;
   line-height: 1.4;
 }
 
 .nav-links > a:hover,
 .nav-links .dropdown-toggle:hover {
-  color: #80549b;
+  color: #2f6672;
   text-decoration: none;
 }
 
@@ -138,13 +138,13 @@ a:hover {
 
 /* Dropdown links use the same typography and colors as the main navigation. */
 .nav-links .dropdown-menu a {
-  color: #665b78;
+  color: #4b636a;
   font-size: 0.84rem;
   line-height: 1.4;
 }
 
 .nav-links .dropdown-menu a:hover {
-  color: #80549b;
+  color: #2f6672;
   text-decoration: none;
 }
 
@@ -177,7 +177,7 @@ a:hover {
   border-radius: 0;
   outline: none;
   background: transparent;
-  color: #665b78;
+  color: #4b636a;
   appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -533,7 +533,7 @@ footer {
 }
 
 .footer-social a:hover {
-  color: #a890d3;
+  color: var(--accent);
   transform: translateY(-3px);
 }
 
@@ -614,11 +614,11 @@ footer {
 /* Mobile navigation menu */
 .nav-links.open,
 .nav-links.closing {
-  background: rgba(241, 232, 240, 0.88);
+  background: rgba(232, 241, 241, 0.88);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 
-  /* border: 1px solid rgba(196, 166, 193, 0.35); */
+  /* border: 1px solid rgba(160, 192, 196, 0.35); */
   border-radius: 0px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
   right: calc((100% - 100vw) / 2);
